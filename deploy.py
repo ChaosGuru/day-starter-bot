@@ -3,7 +3,7 @@ import json
 from datetime import datetime, time, timezone, timedelta
 
 import telegram
-from telegram.ext import Updater, CommandHandler, Filters, MessageHandler, Dispatcher
+from telegram.ext import CommandHandler, Filters, MessageHandler, Dispatcher
 
 with open('setup.json') as f:
     setup = json.load(f)
@@ -40,14 +40,11 @@ def main(request):
     if request.method == "POST":
         update = telegram.Update.de_json(request.get_json(force=True), bot)
 
-        # command handlers
+        # handlers
         dispatcher.add_handler(CommandHandler('start', start))
         dispatcher.add_handler(CommandHandler('stop', stop))
-
-        # test handlers
         dispatcher.add_handler(MessageHandler(Filters.text & (~Filters.command), echo))
 
-        # start bot
         dispatcher.process_update(update)
     
     return "ok"
