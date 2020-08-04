@@ -3,10 +3,13 @@ import json
 from datetime import datetime, time, timezone, timedelta
 
 import telegram
-from telegram.ext import Updater, CommandHandler, Filters, MessageHandler
+from telegram.ext import Updater, CommandHandler, Filters, MessageHandler, Dispatcher
 
-# enable logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+with open('setup.json') as f:
+    setup = json.load(f)
+    bot = telegram.Bot(token=setup["token"])
+
+dispatcher = Dispatcher(bot=bot, update_queue=None, use_context=True)
 
 def start(update, context):
     update.message.reply_text('♥Просто насолоджуйсь сьогоднішнім днем.\n\n♦Якщо також хочеш бота, або маєш пропозиції щодо цього напиши мені\n>>> https://t.me/I_NANI_I\n\n‼ /stop - зупинити бота', disable_web_page_preview=True)
@@ -32,40 +35,19 @@ def stop(update, context):
 def echo(update, context):
     update.message.reply_text(update.message.text)
 
-def morning(context):
-    job = context.job
-    text = "Доброго ранку!\n\n"
+def main(request):
+    
+    if request.method == "POST":
+        update = telegram.Update.de_json(request.get_json(force=True), bot)
 
-    # whether
+        # command handlers
+        dispatcher.add_handler(CommandHandler('start', start))
+        dispatcher.add_handler(CommandHandler('stop', stop))
 
-    # dishes
-    with open('dishes.json') as f:
-        pass
+        # test handlers
+        dispatcher.add_handler(MessageHandler(Filters.text & (~Filters.command), echo))
 
-    # quote
-
-    context.bot.send_message(job.context, text=text)
-
-def main(request=None):
-    # take setup data
-    with open('setup.json') as f:
-        setup = json.load(f)
-        token = setup['token']
-
-    # setup updater
-    updater = Updater(token=token, use_context=True)
-    disp = updater.dispatcher
-
-    # command handlers
-    disp.add_handler(CommandHandler('start', start))
-    disp.add_handler(CommandHandler('stop', stop))
-
-    # test handlers
-    disp.add_handler(MessageHandler(Filters.text & (~Filters.command), echo))
-
-    # start bot
-    updater.start_polling()
-    updater.idle()
-
-if __name__ == '__main__':
-    main()
+        # start bot
+        dispatcher.process_update(update)
+    
+    return "ok"
