@@ -1,6 +1,5 @@
-import logging
-import json
-from datetime import time, timezone, timedelta
+import logging, json, random
+from datetime import datetime, time, timezone, timedelta
 
 import telegram
 from telegram.ext import Updater, CommandHandler, Filters, MessageHandler
@@ -12,7 +11,7 @@ def start(update, context):
     update.message.reply_text('♥Просто насолоджуйсь сьогоднішнім днем.\n\n♦Якщо також хочеш бота, або маєш пропозиції щодо цього напиши мені\n>>> https://t.me/I_NANI_I\n\n‼ /stop - зупинити бота', disable_web_page_preview=True)
 
     # set time
-    t = time(hour=14, minute=47, tzinfo=timezone(timedelta(hours=3)))
+    t = time(hour=7, tzinfo=timezone(timedelta(hours=3)))
     # t = time(hour=11, minute=30)
 
     # add a job
@@ -20,13 +19,8 @@ def start(update, context):
         job = context.job_queue.run_daily(morning, t, context=update.message.chat_id)
         context.chat_data['morning'] = job
 
-    # add test job
-    if 'test' in context.chat_data:
-        context.chat_data['test'].schedule_removal()
-        del context.chat_data['test']
-    
-    test_job = context.job_queue.run_once(morning, 3, context=update.message.chat_id)
-    context.chat_data['test'] = test_job
+    # test job
+    context.job_queue.run_once(morning, 1, context=update.message.chat_id)
 
 def stop(update, context):
     if 'morning' in context.chat_data:
@@ -43,15 +37,30 @@ def morning(context):
     logging.info("Morning job run.")
 
     job = context.job
-    text = "Доброго ранку!\n\n"
+    text = "♥Веселого ранку! | "
 
     # date
+    text += datetime.now().strftime("%x") + "\n\n"
 
     # whether
 
     # dishes
-    with open('dishes.json') as f:
-        pass
+    days = {
+        "0": "monday",
+        "1": "tuesday",
+        "2": "wednesday",
+        "3": "thursday",
+        "4": "friday",
+        "5": "saturday",
+        "6": "sunday"
+    }
+
+    with open('meal_plan.json', encoding="utf8") as f:
+        meals = json.load(f)
+        rand = random.randint(0, len(meals)-1)
+
+        text += "♦Страви на сьогодні♦\n\n♣Сніданок - %s\n♣Обід - %s\n♣Ввечеря - %s" % \
+            tuple(["%s\n[%s]" % (i["title2"], i["title"]) for i in meals[rand]["week"][days[str(datetime.today().weekday())]]["meals"]])
 
     # quote
 
@@ -61,7 +70,7 @@ def main(request=None):
     # take setup data
     with open('setup.json') as f:
         setup = json.load(f)
-        token = setup['token']
+        token = setup['test_token']
 
     # setup updater
     updater = Updater(token=token, use_context=True)

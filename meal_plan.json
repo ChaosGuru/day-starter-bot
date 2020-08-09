@@ -1,0 +1,265 @@
+[
+  {
+    "week": {
+      "monday": {
+        "meals": [
+          {
+            "id": 653019,
+            "imageType": "jpg",
+            "title": "Never Fail Pumpkin Muffins",
+            "readyInMinutes": 45,
+            "servings": 12,
+            "sourceUrl": "https://spoonacular.com/never-fail-pumpkin-muffins-653019",
+            "title2": "Ніколи не провалюються гарбузові кекси"
+          },
+          {
+            "id": 594179,
+            "imageType": "jpg",
+            "title": "Cacio e Pepe",
+            "readyInMinutes": 20,
+            "servings": 4,
+            "sourceUrl": "http://www.tablefortwoblog.com/cacio-e-pepe/",
+            "title2": "Cacio e Pepe"
+          },
+          {
+            "id": 188826,
+            "imageType": "jpg",
+            "title": "Oyster-Cornbread Stuffing",
+            "readyInMinutes": 45,
+            "servings": 10,
+            "sourceUrl": "http://www.epicurious.com/recipes/food/views/Oyster-Cornbread-Stuffing-368297",
+            "title2": "Набивання устриць-кукурудзяних хлібів"
+          }
+        ],
+        "nutrients": {
+          "calories": 1929.68,
+          "protein": 52.39,
+          "fat": 68.84,
+          "carbohydrates": 274.77
+        }
+      },
+      "tuesday": {
+        "meals": [
+          {
+            "id": 149473,
+            "imageType": "jpg",
+            "title": "Best Breakfast Potatoes Ever",
+            "readyInMinutes": 60,
+            "servings": 12,
+            "sourceUrl": "http://thepioneerwoman.com/cooking/2013/08/best-breakfast-potatoes-ever/",
+            "title2": "Найкращий сніданок Картопля коли-небудь"
+          },
+          {
+            "id": 528853,
+            "imageType": "jpg",
+            "title": "Fast and Easy Dutch Baby Pancake",
+            "readyInMinutes": 20,
+            "servings": 1,
+            "sourceUrl": "http://www.countrycleaver.com/2014/04/fast-easy-dutch-baby-pancake.html",
+            "title2": "Швидкий і легкий голландський дитячий млинець"
+          },
+          {
+            "id": 338568,
+            "imageType": "jpeg",
+            "title": "Apple and Onion Stuffin",
+            "readyInMinutes": 50,
+            "servings": 12,
+            "sourceUrl": "http://www.foodnetwork.com/recipes/rachael-ray/apple-and-onion-stuffin-recipe.html",
+            "title2": "Яблучний та цибулевий фарш"
+          }
+        ],
+        "nutrients": {
+          "calories": 1922.58,
+          "protein": 43.74,
+          "fat": 70.86,
+          "carbohydrates": 279.55
+        }
+      },
+      "wednesday": {
+        "meals": [
+          {
+            "id": 1079327,
+            "imageType": "jpg",
+            "title": "The Very Best Chocolate Banana Bread",
+            "readyInMinutes": 70,
+            "servings": 8,
+            "sourceUrl": "https://ohsweetbasil.com/the-very-best-chocolate-banana-bread-recipe/",
+            "title2": "Дуже найкращий шоколадний банановий хліб"
+          },
+          {
+            "id": 437759,
+            "imageType": "jpg",
+            "title": "Toasted Sausage Cacciatore Sammies",
+            "readyInMinutes": 30,
+            "servings": 4,
+            "sourceUrl": "http://www.tasteofhome.com/Recipes/toasted-sausage-cacciatore-sammies",
+            "title2": "Саммій з какашів з підсмаженою ковбасою"
+          },
+          {
+            "id": 585194,
+            "imageType": "jpg",
+            "title": "Fluffernutter Pie",
+            "readyInMinutes": 90,
+            "servings": 8,
+            "sourceUrl": "http://piesandplots.net/fluffernutter-pie/",
+            "title2": "Пиріг з пуху"
+          }
+        ],
+        "nutrients": {
+          "calories": 1833.79,
+          "protein": 53.95,
+          "fat": 65.64,
+          "carbohydrates": 267.84
+        }
+      },
+      "thursday": {
+        "meals": [
+          {
+            "id": 1082385,
+            "imageType": "jpg",
+            "title": "Chocolate Chip Banana Muffins (with coconut sugar)",
+            "readyInMinutes": 40,
+            "servings": 12,
+            "sourceUrl": "https://www.forkknifeswoon.com/naturally-sweetened-chocolate-chip-banana-muffins/",
+            "title2": "Бананові кекси з шоколадом (з кокосовим цукром)"
+          },
+          {
+            "id": 387570,
+            "imageType": "jpg",
+            "title": "Garden Tuna Pita Sandwiches",
+            "readyInMinutes": 20,
+            "servings": 3,
+            "sourceUrl": "http://www.tasteofhome.com/Recipes/garden-tuna-pita-sandwiches",
+            "title2": "Садові бутерброди з тунця"
+          },
+          {
+            "id": 188826,
+            "imageType": "jpg",
+            "title": "Oyster-Cornbread Stuffing",
+            "readyInMinutes": 45,
+            "servings": 10,
+            "sourceUrl": "http://www.epicurious.com/recipes/food/views/Oyster-Cornbread-Stuffing-368297",
+            "title2": "Набивання устриць-кукурудзяних хлібів"
+          }
+        ],
+        "nutrients": {
+          "calories": 1802.32,
+          "protein": 49.18,
+          "fat": 66.69,
+          "carbohydrates": 251.48
+        }
+      },
+      "friday": {
+        "meals": [
+          {
+            "id": 534741,
+            "imageType": "jpg",
+            "title": "EASY Blackberries and Cream Stuffed French Toast",
+            "readyInMinutes": 25,
+            "servings": 4,
+            "sourceUrl": "https://realhousemoms.com/easy-blackberries-cream-stuffed-french-toast/",
+            "title2": "ЛЕГКА ожина та вершки з начинкою французького тосту"
+          },
+          {
+            "id": 100172,
+            "imageType": "jpg",
+            "title": "Pasta with Speedy Romesco Sauce",
+            "readyInMinutes": 20,
+            "servings": 4,
+            "sourceUrl": "http://www.epicurious.com/recipes/food/views/Pasta-with-Speedy-Romesco-Sauce-233980",
+            "title2": "Макаронні вироби з соусом Speedy Romesco"
+          },
+          {
+            "id": 458444,
+            "imageType": "jpg",
+            "title": "Italian Cassata",
+            "readyInMinutes": 45,
+            "servings": 8,
+            "sourceUrl": "http://allrecipes.com/Recipe/Italian-Cassata/",
+            "title2": "Італійська кассата"
+          }
+        ],
+        "nutrients": {
+          "calories": 2062.57,
+          "protein": 59.95,
+          "fat": 74.69,
+          "carbohydrates": 289.98
+        }
+      },
+      "saturday": {
+        "meals": [
+          {
+            "id": 625163,
+            "imageType": "jpg",
+            "title": "5-Minute Recovery Quinoa Breakfast Bowl",
+            "readyInMinutes": 5,
+            "servings": 1,
+            "sourceUrl": "http://www.simplyquinoa.com/5-minute-recovery-quinoa-breakfast-bowl/",
+            "title2": "5-хвилинна чаша для сніданку з лебедою"
+          },
+          {
+            "id": 279461,
+            "imageType": "jpg",
+            "title": "Creamy Shrimp Pasta",
+            "readyInMinutes": 25,
+            "servings": 6,
+            "sourceUrl": "http://www.kraftrecipes.com/recipes/creamy-shrimp-pasta-106652.aspx",
+            "title2": "Крем-креветки з креветками"
+          },
+          {
+            "id": 655384,
+            "imageType": "jpg",
+            "title": "Peanutbutter Sandwich Cookies",
+            "readyInMinutes": 45,
+            "servings": 6,
+            "sourceUrl": "https://spoonacular.com/peanutbutter-sandwich-cookies-655384",
+            "title2": "Сендвіч-печиво з арахісовим горіхом"
+          }
+        ],
+        "nutrients": {
+          "calories": 1803.83,
+          "protein": 53.85,
+          "fat": 61.45,
+          "carbohydrates": 269.18
+        }
+      },
+      "sunday": {
+        "meals": [
+          {
+            "id": 481825,
+            "imageType": "jpg",
+            "title": "Jumbo Bakery Style Banana Chocolate Chunk Muffins",
+            "readyInMinutes": 38,
+            "servings": 6,
+            "sourceUrl": "https://lifemadesimplebakes.com/2014/05/jumbo-bakery-style-banana-chocolate-chunk-muffins/",
+            "title2": "Шоколадні кекси з бананового шоколаду"
+          },
+          {
+            "id": 884567,
+            "imageType": "jpg",
+            "title": "Black Bean Soft Shell Vegan Tacos",
+            "readyInMinutes": 20,
+            "servings": 3,
+            "sourceUrl": "http://neuroticmommy.com/2017/05/05/black-bean-soft-shell-vegan-tacos/",
+            "title2": "Веганські такої м&#39;якої оболонки чорної квасолі"
+          },
+          {
+            "id": 80186,
+            "imageType": "jpg",
+            "title": "Cracked Crab with Tamarind Sauce",
+            "readyInMinutes": 45,
+            "servings": 4,
+            "sourceUrl": "http://www.myrecipes.com/recipe/cracked-crab-with-tamarind-sauce-10000000600533/",
+            "title2": "Тріщини краба з соусом Тамаринда"
+          }
+        ],
+        "nutrients": {
+          "calories": 1826.61,
+          "protein": 56.49,
+          "fat": 73.24,
+          "carbohydrates": 250.39
+        }
+      }
+    }
+  }
+]
