@@ -3,6 +3,7 @@ from datetime import datetime, time, timezone, timedelta
 
 import telegram
 from telegram.ext import Updater, CommandHandler, Filters, MessageHandler
+from get_meal import get_meal
 
 # enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
@@ -37,7 +38,7 @@ def morning(context):
     logging.info("Morning job run.")
 
     job = context.job
-    text = "♥Веселого ранку! | "
+    text = "♥Веселого ранку | "
 
     # date
     text += datetime.now().strftime("%x") + "\n\n"
@@ -45,26 +46,25 @@ def morning(context):
     # whether
 
     # dishes
-    days = {
-        "0": "monday",
-        "1": "tuesday",
-        "2": "wednesday",
-        "3": "thursday",
-        "4": "friday",
-        "5": "saturday",
-        "6": "sunday"
-    }
+    with open('setup.json') as f:
+        meals = json.load(f)["meals"]
+        breakfest = get_meal(random.choice(meals["breakfest"]))
+        lunch = get_meal(random.choice(meals["lunch"]))
+        salads = get_meal(random.choice(meals["salads"]))
+        dinner = get_meal(random.choice(meals["dinner"]))
+        desserts = get_meal(random.choice(meals["desserts"]))
 
-    with open('meal_plan.json', encoding="utf8") as f:
-        meals = json.load(f)
-        rand = random.randint(0, len(meals)-1)
-
-        text += "♦Страви на сьогодні♦\n\n♣Сніданок - %s\n♣Обід - %s\n♣Ввечеря - %s" % \
-            tuple(["%s\n[%s]" % (i["title2"], i["title"]) for i in meals[rand]["week"][days[str(datetime.today().weekday())]]["meals"]])
+        text += "♦Пропозиції на сьогодні♦\n"
+        text += "♣Сніданок\n- %s\n- <a href='%s'>рецепт</a>\n" % breakfest
+        text += "♣Обід\n- %s\n- <a href='%s'>рецепт</a>\n" % lunch
+        text += "♣Салат\n- %s\n- <a href='%s'>рецепт</a>\n" % salads
+        text += "♣Ввечеря\n- %s\n- <a href='%s'>рецепт</a>\n" % dinner
+        text += "♣Десерт\n- %s\n- <a href='%s'>рецепт</a>\n" % desserts
 
     # quote
 
-    context.bot.send_message(job.context, text=text)
+    context.bot.send_message(job.context, text=text, parse_mode=telegram.ParseMode.HTML)
+    logging.info("Morning job finished.")
 
 def main(request=None):
     # take setup data
